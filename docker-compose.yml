@@ -7,7 +7,6 @@ services:
             - prometheus_data:/prometheus
         command:
             - '-config.file=/etc/prometheus/prometheus.yml'
-            - '-alertmanager.url=http://alertmanager:9093'
     node-exporter:
         image: prom/node-exporter
     grafana:
