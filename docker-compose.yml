@@ -20,6 +20,4 @@ services:
 volumes:
     prometheus_data: {}
     grafana_data: {}
-    letsencrypt: {}
-    letsencrypt_backups: {}
     dhparam_cache: {}
