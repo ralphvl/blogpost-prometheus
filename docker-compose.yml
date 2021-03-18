@@ -20,12 +20,16 @@ services:
             - GF_SECURITY_ADMIN_PASSWORD=pass
         volumes:
             - grafana_data:/var/lib/grafana
+        ports:
+            - "3000:3000"
         depends_on:
             - prometheus
     alertmanager:
         build: ./alertmanager
         command:
             - '-config.file=/alertmanager.yml'
+    snmp-exporter:
+        image: prom/snmp-exporter
 volumes:
     prometheus_data: {}
     grafana_data: {}
