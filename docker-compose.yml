@@ -8,8 +8,12 @@ services:
         command:
             - '-config.file=/etc/prometheus/prometheus.yml'
             - '-alertmanager.url=http://alertmanager:9093'
+        ports:
+            - "9090:9090"
     node-exporter:
         image: prom/node-exporter
+        ports:
+            - "9100:9100"
     grafana:
         image: grafana/grafana:3.0.1
         environment:
