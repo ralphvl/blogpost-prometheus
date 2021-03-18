@@ -11,17 +11,13 @@ services:
     node-exporter:
         image: prom/node-exporter
     grafana:
-        image: grafana/grafana:3.0.1
+        image: grafana/grafana
         environment:
             - GF_SECURITY_ADMIN_PASSWORD=pass
         volumes:
             - grafana_data:/var/lib/grafana
         depends_on:
             - prometheus
-    alertmanager:
-        build: ./alertmanager
-        command:
-            - '-config.file=/alertmanager.yml'
 volumes:
     prometheus_data: {}
     grafana_data: {}
